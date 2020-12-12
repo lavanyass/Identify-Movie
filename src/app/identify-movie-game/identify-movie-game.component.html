@@ -1,0 +1,62 @@
+<app-game-rules
+  *ngIf="gameState === gameStateEnum.Initialized"
+  (startGame)="startGame()"
+></app-game-rules>
+<div *ngIf="gameState === gameStateEnum.Started" class="game-container">
+  <button mat-raised-button color="primary" (click)="nextStep()">Next</button>
+  <button mat-raised-button color="primary" (click)="skip()">Skip</button>
+  <div
+    style="
+      cursor: pointer;
+      flex-flow: row wrap;
+      box-sizing: border-box;
+      display: flex;
+    "
+  >
+    <div fxFlex="50">
+      <app-picture-tile
+        *ngIf="movieStepNumber >= 0"
+        [currentMovie]="currentMovie"
+        pictureCode="01"
+      ></app-picture-tile>
+    </div>
+    <div fxFlex="50">
+      <app-picture-tile
+        *ngIf="movieStepNumber >= 1"
+        [currentMovie]="currentMovie"
+        pictureCode="02"
+      ></app-picture-tile>
+    </div>
+    <div fxFlex="50">
+      <app-picture-tile
+        *ngIf="movieStepNumber >= 2"
+        [currentMovie]="currentMovie"
+        pictureCode="03"
+      ></app-picture-tile>
+    </div>
+    <div fxFlex="50">
+      <app-picture-tile
+        *ngIf="movieStepNumber >= 3"
+        [currentMovie]="currentMovie"
+        pictureCode="04"
+      ></app-picture-tile>
+    </div>
+    <div fxFlex="50">
+      <app-picture-tile
+        *ngIf="movieStepNumber >= 4"
+        [currentMovie]="currentMovie"
+        pictureCode="05"
+      ></app-picture-tile>
+    </div>
+    <div fxFlex="50">
+      <app-movie-name-reveal
+        *ngIf="movieStepNumber >= 5"
+        [currentMovie]="currentMovie"
+      >
+      </app-movie-name-reveal>
+    </div>
+  </div>
+</div>
+<app-game-results
+  *ngIf="gameState === gameStateEnum.Completed"
+></app-game-results>
