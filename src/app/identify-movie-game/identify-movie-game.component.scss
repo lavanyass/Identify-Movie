@@ -8,14 +8,15 @@ button {
   width: 300px;
 }
 
-.row1 {
-  background-color: gray;
+.row-1 {
+  height: 30%;
 }
 
-.row2 {
-  background-color: yellow;
+.row-2 {
+  height: 30%;
 }
 
-.row2 {
-  background-color: blue;
+.row-3 {
+  height: 30%;
+  display: flex;
 }
