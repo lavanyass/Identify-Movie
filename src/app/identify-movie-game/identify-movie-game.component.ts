@@ -34,8 +34,13 @@ export class IdentifyMovieGameComponent implements OnInit {
   }
   moveToNextMovie() {
     this.movieId++;
-    this.movieStepNumber = 0;
-    this.loadCurrentMovie();
+
+    if (this.movieId >= this.movieList.length) {
+      this.gameState = GameState.Completed;
+    } else {
+      this.movieStepNumber = 0;
+      this.loadCurrentMovie();
+    }
   }
 
   skip() {
