@@ -7,6 +7,41 @@ export interface MovieDetail {
 export const MovieList: MovieDetail[] = [
   {
     Id: 1,
+    Name: 'Yarradi Nee Mogini',
+    Path: './assets/game/YNM',
+  },
+  {
+    Id: 1,
+    Name: 'VIP',
+    Path: './assets/game/VIP',
+  },
+  {
+    Id: 1,
+    Name: 'Nanban (3 Idiots)',
+    Path: './assets/game/Friends',
+  },
+  {
+    Id: 1,
+    Name: 'Nanban (3 Idiots)',
+    Path: './assets/game/Friends',
+  },
+  {
+    Id: 1,
+    Name: 'Villan',
+    Path: './assets/game/Villan',
+  },
+  {
+    Id: 1,
+    Name: 'Vassool Raja MBBS',
+    Path: './assets/game/MBBS',
+  },
+  {
+    Id: 1,
+    Name: 'Ammarkalam',
+    Path: './assets/game/Amarkalam',
+  },
+  {
+    Id: 1,
     Name: 'Padiyappa',
     Path: './assets/game/Padiyappa',
   },
