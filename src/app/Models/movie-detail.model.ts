@@ -7,6 +7,21 @@ export interface MovieDetail {
 export const MovieList: MovieDetail[] = [
   {
     Id: 1,
+    Name: 'Vikram Vedha',
+    Path: './assets/game/VikramVeda',
+  },
+  {
+    Id: 1,
+    Name: 'Oh My Kadavule',
+    Path: './assets/game/OhMyKadavule',
+  },
+  {
+    Id: 1,
+    Name: 'Sathuranga Vettai',
+    Path: './assets/game/SV',
+  },
+  {
+    Id: 1,
     Name: 'Yarradi Nee Mogini',
     Path: './assets/game/YNM',
   },
