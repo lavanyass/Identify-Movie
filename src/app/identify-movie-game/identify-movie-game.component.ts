@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { GameState } from '../Models/game-state';
 import { MovieDetail, MovieList } from '../Models/movie-detail.model';
 
@@ -8,20 +8,16 @@ import { MovieDetail, MovieList } from '../Models/movie-detail.model';
   styleUrls: ['./identify-movie-game.component.scss'],
 })
 export class IdentifyMovieGameComponent implements OnInit {
-  gameStateEnum = GameState;
+  //gameStateEnum = GameState;
   movieList = MovieList;
   movieId = 0;
-  movieStepNumber = -1;
+  movieStepNumber = 0;
   currentMovie: MovieDetail;
-  gameState: GameState = GameState.Initialized;
-
+  // gameState: GameState = GameState.Started;
+  @Output() endGame = new EventEmitter();
   constructor() {}
 
   ngOnInit(): void {
-    this.loadCurrentMovie();
-  }
-
-  loadCurrentMovie() {
     this.currentMovie = this.movieList[this.movieId];
   }
 
@@ -36,21 +32,14 @@ export class IdentifyMovieGameComponent implements OnInit {
     this.movieId++;
 
     if (this.movieId >= this.movieList.length) {
-      this.gameState = GameState.Completed;
+      this.endGame.emit();
     } else {
       this.movieStepNumber = 0;
-      this.loadCurrentMovie();
+      this.currentMovie = this.movieList[this.movieId];
     }
   }
 
   skip() {
     this.moveToNextMovie();
-  }
-
-  startGame() {
-    this.gameState = this.gameStateEnum.Started;
-    this.movieId = 0;
-    this.movieStepNumber = 0;
-    this.loadCurrentMovie();
   }
 }

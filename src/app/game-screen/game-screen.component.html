@@ -1,0 +1,10 @@
+<app-game-rules
+  *ngIf="gameState === gameStateEnum.Initialized"
+  (startGame)="startGame()"
+></app-game-rules>
+<app-identify-movie-game
+*ngIf="gameState === gameStateEnum.Started" (endGame) = "endGame()" ></app-identify-movie-game>
+<app-game-results 
+  *ngIf="gameState === gameStateEnum.Completed" 
+  
+></app-game-results>

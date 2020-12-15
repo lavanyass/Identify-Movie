@@ -10,6 +10,7 @@ import { GameRulesComponent } from './game-rules/game-rules.component';
 import { GameResultsComponent } from './game-results/game-results.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
+import { GameScreenComponent } from './game-screen/game-screen.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { MatButtonModule } from '@angular/material/button';
     IdentifyMovieGameComponent,
     GameRulesComponent,
     GameResultsComponent,
+    GameScreenComponent,
   ],
   imports: [
     BrowserModule,

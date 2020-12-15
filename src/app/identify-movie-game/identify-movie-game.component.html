@@ -1,13 +1,10 @@
-<app-game-rules
-  *ngIf="gameState === gameStateEnum.Initialized"
-  (startGame)="startGame()"
-></app-game-rules>
-<div *ngIf="gameState === gameStateEnum.Started">
+
+<div >
   <button mat-raised-button color="primary" (click)="nextStep()">Next</button>
   <button mat-raised-button color="primary" (click)="skip()">Skip</button>
 </div>
 
-<div *ngIf="gameState === gameStateEnum.Started" class="game-container">
+<div  class="game-container">
   <div class="row-1">
     <app-picture-tile
       *ngIf="movieStepNumber >= 0"
@@ -47,6 +44,4 @@
     </div>
   </div>
 </div>
-<app-game-results
-  *ngIf="gameState === gameStateEnum.Completed"
-></app-game-results>
+
