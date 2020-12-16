@@ -2,7 +2,10 @@
 <div >
   <button mat-raised-button color="primary" (click)="nextStep()">Next</button>
   <button mat-raised-button color="primary" (click)="skip()">Skip</button>
+  <app-score-display [teamA]="teamAScore" [teamB]="teamBScore"></app-score-display>
 </div>
+
+
 
 <div  class="game-container">
   <div class="row-1">
@@ -42,6 +45,16 @@
       >
       </app-movie-name-reveal>
     </div>
+    <div>
+      <app-score-calculation 
+       [teamA]="teamAScore" 
+       [teamB]="teamBScore" 
+       (teamAscoreUpdate)="teamAScoreUpdated($event)" 
+       (teamBscoreUpdate)="teamBScoreUpdated($event)" >       
+      </app-score-calculation>
+    </div> 
+
+      
+    </div>
   </div>
-</div>
 
