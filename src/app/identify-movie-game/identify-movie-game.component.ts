@@ -8,13 +8,13 @@ import { MovieDetail, MovieList } from '../Models/movie-detail.model';
   styleUrls: ['./identify-movie-game.component.scss'],
 })
 export class IdentifyMovieGameComponent implements OnInit {
-  //gameStateEnum = GameState;
   movieList = MovieList;
   movieId = 0;
   movieStepNumber = 0;
   currentMovie: MovieDetail;
-  // gameState: GameState = GameState.Started;
   @Output() endGame = new EventEmitter();
+  teamAScore = 0;
+  teamBScore = 0;
   constructor() {}
 
   ngOnInit(): void {
@@ -24,7 +24,7 @@ export class IdentifyMovieGameComponent implements OnInit {
   nextStep() {
     this.movieStepNumber++;
 
-    if (this.movieStepNumber > 5) {
+    if (this.movieStepNumber > 6) {
       this.moveToNextMovie();
     }
   }
@@ -40,6 +40,14 @@ export class IdentifyMovieGameComponent implements OnInit {
   }
 
   skip() {
+    this.moveToNextMovie();
+  }
+  teamAScoreUpdated(score) {
+    this.teamAScore = score;
+    this.moveToNextMovie();
+  }
+  teamBScoreUpdated(score) {
+    this.teamBScore = score;
     this.moveToNextMovie();
   }
 }

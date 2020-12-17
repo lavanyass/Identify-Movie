@@ -1,8 +1,10 @@
 
 <div >
-  <button mat-raised-button color="primary" (click)="nextStep()">Next</button>
-  <button mat-raised-button color="primary" (click)="skip()">Skip</button>
+  <button mat-raised-button color="primary" [disabled]="movieStepNumber >= 6" (click)="nextStep()">Next</button>
+  <button mat-raised-button color="primary" [disabled]="movieStepNumber >= 6"(click)="skip()">Skip</button>
+  <app-score-display [teamA]="teamAScore" [teamB]="teamBScore"></app-score-display>
 </div>
+
 
 <div  class="game-container">
   <div class="row-1">
@@ -42,6 +44,17 @@
       >
       </app-movie-name-reveal>
     </div>
+    <div> 
+      <app-score-calculation  
+      *ngIf="movieStepNumber >= 6"
+       [teamA]="teamAScore" 
+       [teamB]="teamBScore" 
+       (teamAscoreUpdate)="teamAScoreUpdated($event)" 
+       (teamBscoreUpdate)="teamBScoreUpdated($event)" >     
+      </app-score-calculation>
+    </div> 
+
+      
+    </div>
   </div>
-</div>
 

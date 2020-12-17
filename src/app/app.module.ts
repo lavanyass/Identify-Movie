@@ -11,6 +11,8 @@ import { GameResultsComponent } from './game-results/game-results.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { GameScreenComponent } from './game-screen/game-screen.component';
+import { ScoreDisplayComponent } from './score-display/score-display.component';
+import { ScoreCalculationComponent } from './score-calculation/score-calculation.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +23,8 @@ import { GameScreenComponent } from './game-screen/game-screen.component';
     GameRulesComponent,
     GameResultsComponent,
     GameScreenComponent,
+    ScoreDisplayComponent,
+    ScoreCalculationComponent,
   ],
   imports: [
     BrowserModule,
