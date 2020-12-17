@@ -24,7 +24,7 @@ export class IdentifyMovieGameComponent implements OnInit {
   nextStep() {
     this.movieStepNumber++;
 
-    if (this.movieStepNumber > 5) {
+    if (this.movieStepNumber > 6) {
       this.moveToNextMovie();
     }
   }
@@ -43,10 +43,11 @@ export class IdentifyMovieGameComponent implements OnInit {
     this.moveToNextMovie();
   }
   teamAScoreUpdated(score) {
-    console.log('correctAclick' + score);
     this.teamAScore = score;
+    this.moveToNextMovie();
   }
   teamBScoreUpdated(score) {
     this.teamBScore = score;
+    this.moveToNextMovie();
   }
 }
