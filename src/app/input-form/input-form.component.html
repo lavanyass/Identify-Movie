@@ -1,0 +1,43 @@
+<h1>Employee Form</h1>
+
+<form [formGroup]="employeeForm" (submit)="commitForm()">
+  <mat-form-field
+    appearance="outline"
+    data-automation="comments-text"
+    fxFlexFill
+  >
+    <mat-label>Enter First Name</mat-label>
+    <input matInput [formControlName]="this.formKeys.FIRST_NAME" />
+  </mat-form-field>
+
+  <mat-form-field
+    appearance="outline"
+    data-automation="comments-text"
+    fxFlexFill
+  >
+    <mat-label>Enter Last Name</mat-label>
+    <input matInput [formControlName]="this.formKeys.LAST_NAME" />
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Department</mat-label>
+    <mat-select [formControlName]="formKeys.DEPARTMENT">
+      <mat-option *ngFor="let depart of departments" [value]="depart">{{
+        depart
+      }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-checkbox [formControlName]="this.formKeys.SUBSCRIBE_NEWS_LETTER"
+    >Subscribe News Letter</mat-checkbox
+  >
+
+  <button
+    mat-raised-button
+    color="primary"
+    [disabled]="!employeeForm.valid"
+    type="submit"
+  >
+    SAVE
+  </button>
+</form>

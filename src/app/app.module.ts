@@ -13,6 +13,13 @@ import { MatButtonModule } from '@angular/material/button';
 import { GameScreenComponent } from './game-screen/game-screen.component';
 import { ScoreDisplayComponent } from './score-display/score-display.component';
 import { ScoreCalculationComponent } from './score-calculation/score-calculation.component';
+import { InputFormComponent } from './input-form/input-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatInputModule } from '@angular/material/input';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -25,12 +32,18 @@ import { ScoreCalculationComponent } from './score-calculation/score-calculation
     GameScreenComponent,
     ScoreDisplayComponent,
     ScoreCalculationComponent,
+    InputFormComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatButtonModule,
+    ReactiveFormsModule,
+    MatDatepickerModule,
+    MatInputModule,
+    MatCheckboxModule,
+    MatSelectModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

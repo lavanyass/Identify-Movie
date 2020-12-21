@@ -7,6 +7,11 @@ export interface MovieDetail {
 export const MovieList: MovieDetail[] = [
   {
     Id: 1,
+    Name: 'Padiyappa',
+    Path: './assets/game/Padiyappa',
+  },
+  {
+    Id: 1,
     Name: 'Vikram Vedha',
     Path: './assets/game/VikramVeda',
   },
@@ -55,11 +60,7 @@ export const MovieList: MovieDetail[] = [
     Name: 'Ammarkalam',
     Path: './assets/game/Amarkalam',
   },
-  {
-    Id: 1,
-    Name: 'Padiyappa',
-    Path: './assets/game/Padiyappa',
-  },
+
   {
     Id: 11,
     Name: 'Imaika Nodigal',
